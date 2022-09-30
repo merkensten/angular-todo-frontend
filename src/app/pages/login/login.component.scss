@@ -1,6 +1,10 @@
 .login-wrapper {
   padding: 0 2rem;
 
+  h1 {
+    color: var(--blue);
+  }
+
   form {
     max-width: 1000px;
     margin: 5rem auto;
