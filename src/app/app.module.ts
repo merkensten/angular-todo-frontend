@@ -20,9 +20,11 @@ import { TodoItemComponent } from './components/core/todos/todo-item/todo-item.c
 import { UpdateTodoComponent } from './components/core/todos/update-todo/update-todo.component';
 import { AppHeaderComponent } from './components/nav/header/app-header/app-header.component';
 import { GuestHeaderComponent } from './components/nav/header/guest-header/guest-header.component';
+import { ButtonComponent } from './components/ui/button/button.component';
+import { LinkButtonComponent } from './components/ui/link-button/link-button.component';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundComponent, HomeComponent, LoginComponent, SignupComponent, DashboardComponent, AccountComponent, HeaderComponent, FooterComponent, CreateTodoComponent, DisplayTodosComponent, TodoItemComponent, UpdateTodoComponent, AppHeaderComponent, GuestHeaderComponent],
+  declarations: [AppComponent, NotFoundComponent, HomeComponent, LoginComponent, SignupComponent, DashboardComponent, AccountComponent, HeaderComponent, FooterComponent, CreateTodoComponent, DisplayTodosComponent, TodoItemComponent, UpdateTodoComponent, AppHeaderComponent, GuestHeaderComponent, ButtonComponent, LinkButtonComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -19,11 +19,17 @@
       </svg>
     </div>
     <nav class="desktop-menu">
-      <a routerLink="/app/konto">
-        <button class="btn-secondary">Mitt konto</button>
-      </a>
+      <app-link-button
+        text="Mitt konto"
+        type="secondary"
+        link="/app/konto"
+      ></app-link-button>
 
-      <button class="btn-primary" (click)="logoutUser()">Logga ut</button>
+      <app-button
+        text="Logga ut"
+        type="primary"
+        (btnClick)="logoutUser()"
+      ></app-button>
     </nav>
   </div>
   <!-- Header modal -->
@@ -56,7 +62,11 @@
           </li>
 
           <li class="list-item-btn">
-            <button class="btn-primary" (click)="logoutUser()">Logga ut</button>
+            <app-button
+              text="Logga ut"
+              type="primary"
+              (btnClick)="logoutUser()"
+            ></app-button>
           </li>
         </ul>
       </nav>

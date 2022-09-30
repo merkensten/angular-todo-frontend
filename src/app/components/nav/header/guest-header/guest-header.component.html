@@ -19,13 +19,16 @@
       </svg>
     </div>
     <nav class="desktop-menu">
-      <a routerLink="/logga-in"
-        ><button class="btn-secondary">Logga in</button></a
-      >
-
-      <a routerLink="/registrera">
-        <button class="btn-primary">Registrera</button>
-      </a>
+      <app-link-button
+        text="Logga in"
+        type="secondary"
+        link="/logga-in"
+      ></app-link-button>
+      <app-link-button
+        text="Registrera"
+        type="primary"
+        link="/registrera"
+      ></app-link-button>
     </nav>
   </div>
   <!-- Header modal -->

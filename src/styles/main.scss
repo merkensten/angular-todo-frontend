@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./normalize.scss";
-@import "./variables.scss";
+@import "./config/normalize.scss";
+@import "./config/variables.scss";
+@import "./buttons.scss";
 
 /* Font Imports */
 
@@ -79,6 +80,10 @@ a {
   color: #000;
 }
 
+a + a {
+  margin-left: 1rem;
+}
+
 /* Img base style */
 img {
   width: 100%;
@@ -94,47 +99,6 @@ form {
     outline: none;
     background-color: #e3e3e3;
   }
-
-  button {
-    margin-left: 1rem;
-  }
-}
-
-button {
-  border: none;
-  border-radius: 50px;
-  padding: 1.2rem 3rem;
-  font-size: 1.6rem;
-  cursor: pointer;
-  outline: none;
-}
-
-a + a {
-  margin-left: 1rem;
-}
-
-.form-btn {
-  padding: 2rem;
-  margin: 0;
-}
-
-button + button {
-  margin-left: 1rem;
-}
-
-.btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
-
-  a {
-    color: var(--color-secondary);
-  }
-}
-
-.btn-secondary {
-  background-color: var(--color-secondary);
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
 }
 
 .error {

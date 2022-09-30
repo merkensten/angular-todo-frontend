@@ -3,12 +3,16 @@
     <h1 class="title">Angular todo app</h1>
 
     <div class="button-wrapper">
-      <button class="btn-secondary">
-        <a routerLink="/logga-in">Logga in</a>
-      </button>
-      <button class="btn-primary">
-        <a routerLink="/registrera">Registrera</a>
-      </button>
+      <app-link-button
+        type="secondary"
+        text="Logga in"
+        link="/logga-in"
+      ></app-link-button>
+      <app-link-button
+        type="primary"
+        text="Registrera"
+        link="/registrera"
+      ></app-link-button>
     </div>
   </div>
   <img src="../../../assets/hero.svg" alt="hero img" class="hero-img" />

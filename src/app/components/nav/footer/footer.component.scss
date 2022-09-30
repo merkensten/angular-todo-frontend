@@ -7,17 +7,13 @@
     flex-direction: column;
     margin-top: 5rem;
 
-    a {
+    app-link-button {
       margin: 0;
-      max-width: 60%;
+      max-width: 100%;
     }
 
-    a + a {
+    app-link-button + app-link-button {
       margin-top: 2rem;
-    }
-
-    button {
-      width: 100%;
     }
   }
 

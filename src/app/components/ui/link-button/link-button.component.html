@@ -1,0 +1,10 @@
+<a routerLink="{{ link }}" class="btn-wrapper">
+  <button
+    [ngClass]="{
+      'btn-primary': type === 'primary',
+      'btn-secondary': type === 'secondary'
+    }"
+  >
+    {{ text }}
+  </button>
+</a>
