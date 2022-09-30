@@ -19,12 +19,14 @@ button {
   a {
     color: var(--color-secondary);
   }
+  width: 100%;
 }
 
 .btn-secondary {
   background-color: var(--color-secondary);
   color: var(--color-primary);
   border: 1px solid var(--color-primary);
+  width: 100%;
 }
 
 app-link-button + app-button {
