@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -20,7 +23,7 @@ import { GuestHeaderComponent } from './components/nav/header/guest-header/guest
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent, HomeComponent, LoginComponent, SignupComponent, DashboardComponent, AccountComponent, HeaderComponent, FooterComponent, CreateTodoComponent, DisplayTodosComponent, TodoItemComponent, UpdateTodoComponent, AppHeaderComponent, GuestHeaderComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

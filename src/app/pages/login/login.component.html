@@ -1,9 +1,11 @@
 <div class="login-wrapper">
-  <form>
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)" novalidate>
     <h1>Logga in</h1>
     <label>
       Användarnamn
       <input
+        ngModel
+        #username="ngModel"
         type="text"
         name="username"
         id="username"
@@ -13,6 +15,8 @@
     <label>
       Lösenord
       <input
+        ngModel
+        #password="ngModel"
         type="password"
         name="password"
         id="password"
