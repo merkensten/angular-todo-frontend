@@ -1,1 +1,33 @@
-<p>signup works!</p>
+<div class="signup-wrapper">
+  <form>
+    <h1>Registrera konto</h1>
+    <label>
+      Användarnamn
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="användarnamn..."
+      />
+    </label>
+    <label>
+      Lösenord
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="lösenord..."
+      />
+    </label>
+    <button class="btn-primary form-btn" type="submit">
+      <span *ngIf="formSucess">Laddar...</span>
+      <span *ngIf="!formSucess">Registrera</span>
+    </button>
+    <div *ngIf="formError">
+      <p class="error">{{ formErrorMessage }}</p>
+    </div>
+    <div *ngIf="formSucess">
+      <p>Registrering lyckades! Du kommer snart navigeras till login sidan.</p>
+    </div>
+  </form>
+</div>
