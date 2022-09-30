@@ -122,6 +122,10 @@ button + button {
 .btn-primary {
   background-color: $color-primary;
   color: $color-secondary;
+
+  a {
+    color: $color-secondary;
+  }
 }
 
 .btn-secondary {
