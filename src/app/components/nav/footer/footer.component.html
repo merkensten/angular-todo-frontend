@@ -1,1 +1,24 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="footer-border">
+    <div class="footer-border-display"></div>
+  </div>
+  <div class="footer-wrapper">
+    <a routerLink="/" class="footer-logo">Todo Angular App</a>
+    <nav *ngIf="!authenticatedUser">
+      <button class="btn-secondary">
+        <a routerLink="/logga-in">Logga in</a>
+      </button>
+      <button class="btn-primary">
+        <a routerLink="/registrera">Registrera Konto</a>
+      </button>
+    </nav>
+    <nav *ngIf="authenticatedUser">
+      <button class="btn-secondary">
+        <a routerLink="/logga-in">Hanter Konto</a>
+      </button>
+      <button class="btn-primary">
+        <a (click)="logoutUser()">Logga ut</a>
+      </button>
+    </nav>
+  </div>
+</footer>

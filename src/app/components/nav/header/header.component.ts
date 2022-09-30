@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   constructor() {}
-  user = true;
+  // Denna behöver jobba mot ett globalt state
+  user = false;
 
   ngOnInit(): void {
   }

@@ -16,7 +16,7 @@ export class AppHeaderComponent implements OnInit {
     this.displayModal = !this.displayModal;
   }
 
-  // Behöver skapa riktig funktionlitet för att logga ut användare
+  // Denna behöver jobba mot ett globalt state
   logoutUser() {
     alert('Användare utloggad');
     this.displayModal = false;
