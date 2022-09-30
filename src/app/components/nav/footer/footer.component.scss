@@ -7,13 +7,17 @@
     flex-direction: column;
     margin-top: 5rem;
 
-    button {
+    a {
       margin: 0;
       max-width: 60%;
     }
 
-    button + button {
+    a + a {
       margin-top: 2rem;
+    }
+
+    button {
+      width: 100%;
     }
   }
 
@@ -53,7 +57,7 @@
         flex-direction: row;
         margin-top: 0;
 
-        button + button {
+        a + a {
           margin-top: 0;
           margin-left: 2rem;
         }

@@ -110,6 +110,10 @@ button {
   outline: none;
 }
 
+a + a {
+  margin-left: 1rem;
+}
+
 .form-btn {
   padding: 2rem;
   margin: 0;

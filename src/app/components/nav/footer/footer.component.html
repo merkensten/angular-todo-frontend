@@ -5,20 +5,19 @@
   <div class="footer-wrapper">
     <a routerLink="/" class="footer-logo">Todo Angular App</a>
     <nav *ngIf="!authenticatedUser">
-      <button class="btn-secondary">
-        <a routerLink="/logga-in">Logga in</a>
-      </button>
-      <button class="btn-primary">
-        <a routerLink="/registrera">Registrera Konto</a>
-      </button>
+      <a routerLink="/logga-in">
+        <button class="btn-secondary">Logga in</button>
+      </a>
+
+      <a routerLink="/registrera">
+        <button class="btn-primary">Registrera Konto</button>
+      </a>
     </nav>
     <nav *ngIf="authenticatedUser">
       <button class="btn-secondary">
         <a routerLink="/logga-in">Hanter Konto</a>
       </button>
-      <button class="btn-primary">
-        <a (click)="logoutUser()">Logga ut</a>
-      </button>
+      <button class="btn-primary" (click)="logoutUser()">Logga ut</button>
     </nav>
   </div>
 </footer>
