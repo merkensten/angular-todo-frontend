@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -24,8 +25,32 @@ import { ButtonComponent } from './components/ui/button/button.component';
 import { LinkButtonComponent } from './components/ui/link-button/link-button.component';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundComponent, HomeComponent, LoginComponent, SignupComponent, DashboardComponent, AccountComponent, HeaderComponent, FooterComponent, CreateTodoComponent, DisplayTodosComponent, TodoItemComponent, UpdateTodoComponent, AppHeaderComponent, GuestHeaderComponent, ButtonComponent, LinkButtonComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    NotFoundComponent,
+    HomeComponent,
+    LoginComponent,
+    SignupComponent,
+    DashboardComponent,
+    AccountComponent,
+    HeaderComponent,
+    FooterComponent,
+    CreateTodoComponent,
+    DisplayTodosComponent,
+    TodoItemComponent,
+    UpdateTodoComponent,
+    AppHeaderComponent,
+    GuestHeaderComponent,
+    ButtonComponent,
+    LinkButtonComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    FontAwesomeModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
