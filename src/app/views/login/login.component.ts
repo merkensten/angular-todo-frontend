@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
@@ -8,18 +8,41 @@ import { AuthService } from '../../shared/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
+  loading = false;
   formSucess = false;
   formError = false;
   formErrorMessage = 'Fel användarnamn eller lösenord';
 
-  ngOnInit(): void {}
-
   resetFormErrors() {
     this.formError = false;
-    this.formErrorMessage = 'Fel användarnamn eller lösenord';
+  }
+
+  onLoginUser(username: string, password: string) {
+    if (username && password.length >= 6) {
+      this.resetFormErrors();
+      this.loading = true;
+
+      this.authService.login(username, password).subscribe({
+        next: (sucess) => {
+          if (sucess) {
+            this.router.navigate(['/app']);
+          }
+        },
+        error: (e) => {
+          console.error(e);
+          this.formError = true;
+          console.log('error kördes');
+          this.loading = false;
+        },
+        complete: () => {
+          this.loading = false;
+          console.info('complete');
+        },
+      });
+    }
   }
 
   onFormSubmit(form: NgForm) {
@@ -34,19 +57,7 @@ export class LoginComponent implements OnInit {
     }
 
     if (username && password.length >= 6) {
-      this.resetFormErrors();
-      const { username, password } = formData;
-      console.log(username, password);
-
-      this.authService.login(username, password).subscribe({
-        next: (sucess) => {
-          if (sucess) {
-            this.router.navigate(['/app']);
-          }
-        },
-        error: (e) => console.error(e),
-        complete: () => console.info('complete'),
-      });
+      this.onLoginUser(username, password);
     }
   }
 }

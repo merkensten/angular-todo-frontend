@@ -1,6 +1,6 @@
 <header>
   <div *ngIf="!displayModal" class="header">
-    <a routerLink="/" class="header-logo">Todo App</a>
+    <a routerLink="/app" class="header-logo">Todo App</a>
     <div class="mobile-menu">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@
   <div *ngIf="displayModal" class="header-modal-container">
     <div class="header-modal-wrapper">
       <div class="header-modal-top-section">
-        <a routerLink="/" class="header-logo" (click)="toggleModal()"
+        <a routerLink="/app" class="header-logo" (click)="toggleModal()"
           >Todo App</a
         >
         <svg

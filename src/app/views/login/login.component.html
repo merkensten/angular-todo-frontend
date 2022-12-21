@@ -24,8 +24,8 @@
       />
     </label>
     <button class="btn-primary form-btn" type="submit">
-      <span *ngIf="formSucess">Laddar</span>
-      <span *ngIf="!formSucess">Logga in</span>
+      <span *ngIf="loading">Laddar...</span>
+      <span *ngIf="!loading">Logga in</span>
     </button>
     <div *ngIf="formError">
       <p class="error">{{ formErrorMessage }}</p>
