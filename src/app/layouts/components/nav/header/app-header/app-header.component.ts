@@ -4,7 +4,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-app-header',
   templateUrl: './app-header.component.html',
-  styleUrls: ['../header.component.scss'],
+  styleUrls: ['../headers.scss'],
 })
 export class AppHeaderComponent implements OnInit {
   @Input() faBars = faBars;

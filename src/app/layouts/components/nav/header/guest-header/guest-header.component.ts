@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-guest-header',
   templateUrl: './guest-header.component.html',
-  styleUrls: ['../header.component.scss'],
+  styleUrls: ['../headers.scss'],
 })
 export class GuestHeaderComponent implements OnInit {
   constructor() {}

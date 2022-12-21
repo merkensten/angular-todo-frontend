@@ -1,0 +1,20 @@
+<footer class="footer">
+  <div class="footer-border">
+    <div class="footer-border-display"></div>
+  </div>
+  <div class="footer-wrapper">
+    <a routerLink="/" class="footer-logo">Todo Angular App</a>
+    <nav>
+      <app-link-button
+        text="Hantera Konto"
+        type="secondary"
+        link="/app/konto"
+      ></app-link-button>
+      <app-button
+        text="Logga ut"
+        type="primary"
+        (btnClick)="logoutUser()"
+      ></app-button>
+    </nav>
+  </div>
+</footer>
