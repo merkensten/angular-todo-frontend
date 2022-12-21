@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-app-footer',
@@ -6,11 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app-footer.component.scss'],
 })
 export class AppFooterComponent {
-  // Denna behöver jobba mot authservice
-  authenticatedUser = false;
-  // Denna behöver jobba mot authservice
+  constructor(private authService: AuthService, private router: Router) {}
   logoutUser() {
-    this.authenticatedUser = false;
-    alert('You have been logged out');
+    this.authService.logout();
   }
 }

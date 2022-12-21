@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +9,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   formSucess = false;
   formError = false;
@@ -33,7 +35,18 @@ export class LoginComponent implements OnInit {
 
     if (username && password.length >= 6) {
       this.resetFormErrors();
-      console.log(formData);
+      const { username, password } = formData;
+      console.log(username, password);
+
+      this.authService.login(username, password).subscribe({
+        next: (sucess) => {
+          if (sucess) {
+            this.router.navigate(['/app']);
+          }
+        },
+        error: (e) => console.error(e),
+        complete: () => console.info('complete'),
+      });
     }
   }
 }

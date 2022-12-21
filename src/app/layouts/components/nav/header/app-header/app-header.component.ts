@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-app-header',
@@ -9,7 +11,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 export class AppHeaderComponent implements OnInit {
   @Input() faBars = faBars;
 
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -21,7 +23,7 @@ export class AppHeaderComponent implements OnInit {
 
   // Denna behöver jobba mot ett globalt state
   logoutUser() {
-    alert('Användare utloggad');
     this.displayModal = false;
+    this.authService.logout();
   }
 }

@@ -20,11 +20,7 @@ export class DashboardComponent implements OnInit {
   //   this.authService.getCurrentUserState();
   // }
 
-  setUserTrue() {
-    this.authService.loginUser();
-  }
+  setUserTrue() {}
 
-  setUserFalse() {
-    this.authService.logoutUser();
-  }
+  setUserFalse() {}
 }
