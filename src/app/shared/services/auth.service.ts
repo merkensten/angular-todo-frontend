@@ -26,6 +26,7 @@ export class AuthService {
         // If the request is successful, store the token in local storage and return true
         map((result) => {
           localStorage.setItem('access_token', result.token);
+          this.router.navigate(['/app']);
           return true;
         })
       );
@@ -34,7 +35,7 @@ export class AuthService {
   // Method to log out the user by removing the token from local storage
   logout() {
     localStorage.removeItem('access_token');
-    this.router.navigate(['/']);
+    this.router.navigate(['/logga-in']);
   }
 
   // Method to check if the user is logged in by checking for the presence of a token in local storage

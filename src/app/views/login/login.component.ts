@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
@@ -27,8 +27,9 @@ export class LoginComponent {
 
       this.authService.login(username, password).subscribe({
         next: (sucess) => {
+          console.log(sucess);
           if (sucess) {
-            this.router.navigate(['/app']);
+            // this.router.navigate(['/app']);
           }
         },
         error: (e) => {
@@ -40,6 +41,10 @@ export class LoginComponent {
         complete: () => {
           this.loading = false;
           console.info('complete');
+
+          // if (this.authService.getCurrentUserState()) {
+          //   this.router.navigate(['/app']);
+          // }
         },
       });
     }

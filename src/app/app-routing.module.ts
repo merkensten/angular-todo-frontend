@@ -14,6 +14,7 @@ import { AccountComponent } from './views/app/account/account.component';
 import { CoreLayoutComponent } from './layouts/core-layout/core-layout.component';
 import { GuestLayoutComponent } from './layouts/guest-layout/guest-layout.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { GuestGuard } from './shared/guards/guest.guard';
 
 const routes: Routes = [
   // App routes
@@ -40,6 +41,7 @@ const routes: Routes = [
       { path: 'registrera', component: SignupComponent },
       { path: '**', component: NotFoundComponent },
     ],
+    canActivate: [GuestGuard],
   },
 ];
 
