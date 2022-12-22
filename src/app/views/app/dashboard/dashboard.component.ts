@@ -8,19 +8,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  public userState$: any;
-
-  constructor(private authService: AuthService) {
-    this.userState$ = this.authService.getCurrentUserState();
-  }
+  constructor() {}
 
   ngOnInit(): void {}
-
-  // getCurrentUserState() {
-  //   this.authService.getCurrentUserState();
-  // }
-
-  setUserTrue() {}
-
-  setUserFalse() {}
 }
