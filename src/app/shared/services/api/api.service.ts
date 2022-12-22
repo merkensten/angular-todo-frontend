@@ -10,23 +10,27 @@ export class ApiService {
 
   baseUrl = environment.apiUrl;
 
+  private createUrl(urlPath: string) {
+    return this.baseUrl + '/' + urlPath;
+  }
+
   // Method to retrieve data from the API
-  get(urlPath: string) {
-    return this.http.get(urlPath);
+  getTodos(urlPath: string) {
+    return this.http.get(this.createUrl(urlPath));
   }
 
   // Method to send data to the API to create a new resource
-  create(urlPath: string, data: any) {
+  createTodo(urlPath: string, data: any) {
     return this.http.post(urlPath, data);
   }
 
   // Method to send data to the API to update a resource
-  update(urlPath: string, data: any) {
+  updateTodo(urlPath: string, data: any) {
     return this.http.put(urlPath, data);
   }
 
   // Method to delete a resource from the API
-  delete(urlPath: string) {
+  deleteTodo(urlPath: string) {
     return this.http.delete(urlPath);
   }
 }

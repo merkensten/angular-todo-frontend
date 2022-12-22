@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Todo } from '../types';
 
 @Component({
   selector: 'app-display-todos',
   templateUrl: './display-todos.component.html',
-  styleUrls: ['./display-todos.component.scss']
+  styleUrls: ['./display-todos.component.scss'],
 })
-export class DisplayTodosComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class DisplayTodosComponent {
+  @Input() todos: Todo[] = [];
 }

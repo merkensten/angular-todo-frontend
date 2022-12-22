@@ -41,10 +41,6 @@ export class LoginComponent {
         complete: () => {
           this.loading = false;
           console.info('complete');
-
-          // if (this.authService.getCurrentUserState()) {
-          //   this.router.navigate(['/app']);
-          // }
         },
       });
     }

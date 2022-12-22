@@ -1,7 +1,8 @@
 <div>
   <h1>App dashboard</h1>
+  <h2 *ngIf="this.loading">Loading...</h2>
   <div>
     <app-create-todo></app-create-todo>
-    <app-display-todos></app-display-todos>
+    <app-display-todos [todos]="todos$"></app-display-todos>
   </div>
 </div>

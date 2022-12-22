@@ -18,7 +18,7 @@ export class AuthService {
   login(username: string, password: string): Observable<boolean> {
     // Send a POST request to the login endpoint with the email and password as the request body
     return this.http
-      .post<{ token: string }>(`${this.apiUrl}/auth/login`, {
+      .post<{ token: string; id: string }>(`${this.apiUrl}/auth/login`, {
         username,
         password,
       })
@@ -26,6 +26,7 @@ export class AuthService {
         // If the request is successful, store the token in local storage and return true
         map((result) => {
           localStorage.setItem('access_token', result.token);
+          localStorage.setItem('userId', result.id);
           this.router.navigate(['/app']);
           return true;
         })
@@ -34,7 +35,9 @@ export class AuthService {
 
   // Method to log out the user by removing the token from local storage
   logout() {
+    // Remove the token and user id from local storage
     localStorage.removeItem('access_token');
+    localStorage.removeItem('userId');
     this.router.navigate(['/logga-in']);
   }
 
@@ -48,6 +51,15 @@ export class AuthService {
 
     if (token) {
       return token;
+    }
+    return '';
+  }
+
+  getUserId(): string {
+    const userId = localStorage.getItem('userId');
+
+    if (userId) {
+      return userId;
     }
     return '';
   }
