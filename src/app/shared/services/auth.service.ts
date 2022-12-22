@@ -41,4 +41,13 @@ export class AuthService {
   getCurrentUserState(): boolean {
     return !!localStorage.getItem('access_token');
   }
+
+  getToken(): string {
+    const token = localStorage.getItem('access_token');
+
+    if (token) {
+      return token;
+    }
+    return '';
+  }
 }
